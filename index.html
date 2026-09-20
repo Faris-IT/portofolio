@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="id" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portofolio Muhammad Faris — Web Developer & Pelajar Seumur Hidup dari Bogor, Indonesia."
+    />
+    <meta name="author" content="Muhammad Faris" />
+    <meta name="theme-color" content="#0a0a0f" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Muhammad Faris — Web Developer" />
+    <meta
+      property="og:description"
+      content="Pelajar seumur hidup. Web Developer dari Bogor, Indonesia."
+    />
+    <meta property="og:type" content="website" />
+
+    <title>Muhammad Faris — Web Developer | Pelajar Seumur Hidup</title>
+
+    <!-- Favicon (logo monogram MF) -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+
+    <!-- Fonts: Space Grotesk (heading) + Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons: Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ============================================
+       LOADING SCREEN
+  ============================================ -->
+    <div id="loader" class="loader" aria-hidden="true">
+      <div class="loader__inner">
+        <div class="loader__logo">MF</div>
+        <div class="loader__bar"><span></span></div>
+        <p class="loader__text">
+          Memuat portofolio<span class="loader__dots"></span>
+        </p>
+      </div>
+    </div>
+
+    <!-- ============================================
+       CUSTOM CURSOR
+  ============================================ -->
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+    <!-- ============================================
+       PARTICLE BACKGROUND
+  ============================================ -->
+    <canvas id="particles" class="particles" aria-hidden="true"></canvas>
+
+    <!-- ============================================
+       SCROLL PROGRESS BAR
+  ============================================ -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- ============================================
+       NAVIGATION
+  ============================================ -->
+    <header class="nav" id="nav">
+      <div class="nav__container">
+        <a href="#home" class="nav__logo" aria-label="Beranda">
+          <img
+            src="assets/logo.svg"
+            alt="Logo Muhammad Faris"
+            class="nav__logo-img"
+          />
+          <span class="nav__logo-text">Faris<span class="dot">.</span></span>
+        </a>
+
+        <nav class="nav__menu" id="navMenu" aria-label="Navigasi utama">
+          <ul class="nav__list">
+            <li>
+              <a href="#home" class="nav__link active" data-nav>Beranda</a>
+            </li>
+            <li><a href="#about" class="nav__link" data-nav>Tentang</a></li>
+            <li><a href="#skills" class="nav__link" data-nav>Keahlian</a></li>
+            <li><a href="#projects" class="nav__link" data-nav>Proyek</a></li>
+            <li><a href="#contact" class="nav__link" data-nav>Kontak</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav__actions">
+          <a
+            href="assets/CV-Muhammad-Faris.pdf"
+            download
+            class="btn btn--ghost nav__cv"
+          >
+            <i class="fa-solid fa-download"></i>
+            <span>CV</span>
+          </a>
+          <button
+            class="nav__toggle"
+            id="navToggle"
+            aria-label="Buka menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============================================
+         HERO SECTION
+    ============================================ -->
+      <section id="home" class="hero section">
+        <div class="hero__glow hero__glow--1" aria-hidden="true"></div>
+        <div class="hero__glow hero__glow--2" aria-hidden="true"></div>
+
+        <div class="container hero__container">
+          <div class="hero__content">
+            <p class="hero__hello reveal-up">
+              <span class="wave">👋</span> Halo, saya
+            </p>
+
+            <h1 class="hero__title reveal-up">
+              <span class="gradient-text">Muhammad Faris</span>
+            </h1>
+
+            <h2 class="hero__role reveal-up">
+              <span class="hero__role-static">Saya seorang&nbsp;</span>
+              <span class="hero__role-dynamic" id="typedRole"></span>
+              <span class="hero__cursor-blink">|</span>
+            </h2>
+
+            <p class="hero__tagline reveal-up">
+              <i class="fa-solid fa-quote-left"></i>
+              Pelajar seumur hidup — mengubah ide menjadi kode, dan kode menjadi
+              karya.
+            </p>
+
+            <div class="hero__cta reveal-up">
+              <a href="#projects" class="btn btn--primary magnetic">
+                <i class="fa-solid fa-rocket"></i>
+                <span>Lihat Proyek</span>
+              </a>
+              <a
+                href="assets/CV-Muhammad-Faris.pdf"
+                download
+                class="btn btn--outline magnetic"
+              >
+                <i class="fa-solid fa-file-arrow-down"></i>
+                <span>Download CV</span>
+              </a>
+            </div>
+
+            <div class="hero__socials reveal-up">
+              <a
+                href="https://github.com/Faris-IT"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                class="social"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/m_faris101/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                class="social"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="https://x.com/mFaris101"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (Twitter)"
+                class="social"
+              >
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a
+                href="https://www.threads.com/@m_faris101"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Threads"
+                class="social"
+              >
+                <i class="fa-brands fa-threads"></i>
+              </a>
+              <a
+                href="https://wa.me/62895333658151"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                class="social"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero__visual reveal-right">
+            <div class="hero__photo-wrapper tilt">
+              <div class="hero__photo-ring" aria-hidden="true"></div>
+              <div
+                class="hero__photo-ring hero__photo-ring--2"
+                aria-hidden="true"
+              ></div>
+
+              <div class="hero__photo">
+                <!-- GANTI src dengan foto asli Anda -->
+                <img
+                  src="assets/profile.png"
+                  alt="Foto Muhammad Faris"
+                  onerror="
+                    this.src =
+                      'https://ui-avatars.com/api/?name=Muhammad+Faris&size=500&background=6d28d9&color=fff&bold=true&font-size=0.4'
+                  "
+                />
+              </div>
+
+              <div class="floating-badge floating-badge--1">
+                <i class="fa-solid fa-code"></i>
+                <span>Web Dev</span>
+              </div>
+              <div class="floating-badge floating-badge--2">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <span>Flutter</span>
+              </div>
+              <div class="floating-badge floating-badge--3">
+                <i class="fa-solid fa-pen-ruler"></i>
+                <span>Figma</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <a href="#about" class="scroll-indicator" aria-label="Gulir ke bawah">
+          <span class="scroll-indicator__mouse">
+            <span class="scroll-indicator__wheel"></span>
+          </span>
+          <span class="scroll-indicator__text">Scroll</span>
+        </a>
+      </section>
+
+      <!-- ============================================
+         MARQUEE SKILLS BANNER
+    ============================================ -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>HTML</span><span class="sep">✦</span> <span>CSS</span
+          ><span class="sep">✦</span> <span>JavaScript</span
+          ><span class="sep">✦</span> <span>PHP</span><span class="sep">✦</span>
+          <span>Flutter</span><span class="sep">✦</span> <span>Figma</span
+          ><span class="sep">✦</span> <span>Construct 3</span
+          ><span class="sep">✦</span> <span>HTML</span
+          ><span class="sep">✦</span> <span>CSS</span><span class="sep">✦</span>
+          <span>JavaScript</span><span class="sep">✦</span> <span>PHP</span
+          ><span class="sep">✦</span> <span>Flutter</span
+          ><span class="sep">✦</span> <span>Figma</span
+          ><span class="sep">✦</span> <span>Construct 3</span
+          ><span class="sep">✦</span>
+        </div>
+      </div>
+
+      <!-- ============================================
+         ABOUT SECTION
+    ============================================ -->
+      <section id="about" class="about section">
+        <div class="container">
+          <header class="section__header reveal-up">
+            <span class="section__label">01 — Tentang</span>
+            <h2 class="section__title">
+              Kenalan lebih <span class="gradient-text">dekat</span>
+            </h2>
+            <p class="section__subtitle">
+              Sedikit cerita tentang siapa saya dan apa yang saya kerjakan.
+            </p>
+          </header>
+
+          <div class="about__grid">
+            <div class="about__text reveal-left">
+              <p>
+                Saya <strong>Muhammad Faris</strong>, seorang
+                <strong>Web Developer</strong> muda yang berbasis di
+                <span class="highlight">Bogor, Indonesia</span>. Saat ini saya
+                menempuh pendidikan di <strong>SMK jurusan PPLG</strong>
+                (Pengembangan Perangkat Lunak dan Gim), di mana saya terus
+                mengasah kemampuan dalam membangun aplikasi web dan mobile yang
+                fungsional serta menarik.
+              </p>
+              <p>
+                Saya percaya bahwa belajar adalah proses <em>seumur hidup</em>.
+                Dengan semangat <strong>"Pelajar Seumur Hidup"</strong>, saya
+                aktif mengeksplorasi berbagai teknologi — mulai dari
+                <span class="highlight">HTML, CSS, dan JavaScript</span> untuk
+                web development, <span class="highlight">Flutter</span> untuk
+                mobile apps, hingga <span class="highlight">Figma</span> untuk
+                desain UI/UX.
+              </p>
+              <p>
+                Saya senang mengubah ide menjadi kenyataan melalui kode, dan
+                selalu antusias untuk berkolaborasi dalam proyek-proyek yang
+                menantang! 🚀
+              </p>
+
+              <div class="about__stats">
+                <div class="stat reveal-up">
+                  <h3 class="stat__number" data-count="7">0</h3>
+                  <p class="stat__label">Teknologi</p>
+                </div>
+                <div class="stat reveal-up">
+                  <h3 class="stat__number" data-count="10" data-suffix="+">
+                    0
+                  </h3>
+                  <p class="stat__label">Proyek</p>
+                </div>
+                <div class="stat reveal-up">
+                  <h3 class="stat__number" data-count="100" data-suffix="%">
+                    0
+                  </h3>
+                  <p class="stat__label">Semangat</p>
+                </div>
+              </div>
+            </div>
+
+            <aside class="about__info reveal-right">
+              <div class="info-card">
+                <div class="info-card__icon">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <div>
+                  <span>Nama</span>
+                  <strong>Muhammad Faris</strong>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-card__icon">
+                  <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div>
+                  <span>Profesi</span>
+                  <strong>Web Developer</strong>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-card__icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <span>Lokasi</span>
+                  <strong>Bogor, Indonesia</strong>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-card__icon">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                  <span>Pendidikan</span>
+                  <strong>SMK — Jurusan PPLG</strong>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-card__icon">
+                  <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <div>
+                  <span>Status</span>
+                  <strong class="status-open">
+                    <span class="pulse-dot"></span> Terbuka untuk Kolaborasi
+                  </strong>
+                </div>
+              </div>
+
+              <a
+                href="assets/CV-Muhammad-Faris.pdf"
+                download
+                class="btn btn--primary btn--block magnetic"
+              >
+                <i class="fa-solid fa-file-arrow-down"></i>
+                <span>Unduh CV Saya</span>
+              </a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+         SKILLS SECTION
+    ============================================ -->
+      <section id="skills" class="skills section">
+        <div class="container">
+          <header class="section__header reveal-up">
+            <span class="section__label">02 — Keahlian</span>
+            <h2 class="section__title">
+              Teknologi yang saya <span class="gradient-text">kuasai</span>
+            </h2>
+            <p class="section__subtitle">
+              Tools dan bahasa yang saya gunakan untuk membangun karya.
+            </p>
+          </header>
+
+          <div class="skills__grid">
+            <article class="skill-card reveal-up" data-tilt>
+              <div class="skill-card__icon" style="--clr: #e34f26">
+                <i class="fa-brands fa-html5"></i>
+              </div>
+              <h3 class="skill-card__name">HTML5</h3>
+              <p class="skill-card__desc">Struktur semantik & aksesibel</p>
+              <div class="skill-bar">
+                <div class="skill-bar__fill" data-level="90"></div>
+              </div>
+              <span class="skill-card__level">90%</span>
+            </article>
+
+            <article class="skill-card reveal-up" data-tilt>
+              <div class="skill-card__icon" style="--clr: #2965f1">
+                <i class="fa-brands fa-css3-alt"></i>
+              </div>
+              <h3 class="skill-card__name">CSS3</h3>
+              <p class="skill-card__desc">Animasi, layout, & responsive</p>
+              <div class="skill-bar">
+                <div class="skill-bar__fill" data-level="85"></div>
+              </div>
+              <span class="skill-card__level">85%</span>
+            </article>
+
+            <article class="skill-card reveal-up" data-tilt>
+              <div class="skill-card__icon" style="--clr: #f7df1e">
+                <i class="fa-brands fa-js"></i>
+              </div>
+              <h3 class="skill-card__name">JavaScript</h3>
+              <p class="skill-card__desc">Interaktif & dinamis</p>
+              <div class="skill-bar">
+                <div class="skill-bar__fill" data-level="80"></div>
+              </div>
+              <span class="skill-card__level">80%</span>
+            </article>
+
+            <article class="skill-card reveal-up" data-tilt>
+              <div class="skill-card__icon" style="--clr: #777bb4">
+                <i class="fa-brands fa-php"></i>
+              </div>
+              <h3 class="skill-card__name">PHP</h3>
+              <p class="skill-card__desc">Backend & database</p>
+              <div class="skill-bar">
+                <div class="skill-bar__fill" data-level="75"></div>
+              </div>
+              <span class="skill-card__level">75%</span>
+            </article>
+
+            <article class="skill-card reveal-up" data-tilt>
+              <div class="skill-card__icon" style="--clr: #02569b">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+              </div>
+              <h3 class="skill-card__name">Flutter</h3>
+              <p class="skill-card__desc">Cross-platform mobile apps</p>
+              <div class="skill-bar">
+                <div class="skill-bar__fill" data-level="70"></div>
+              </div>
+              <span class="skill-card__level">70%</span>
+            </article>
+
+            <article class="skill-card reveal-up" data-tilt>
+              <div class="skill-card__icon" style="--clr: #f24e1e">
+                <i class="fa-brands fa-figma"></i>
+              </div>
+              <h3 class="skill-card__name">Figma</h3>
+              <p class="skill-card__desc">UI/UX & prototyping</p>
+              <div class="skill-bar">
+                <div class="skill-bar__fill" data-level="85"></div>
+              </div>
+              <span class="skill-card__level">85%</span>
+            </article>
+
+            <article class="skill-card reveal-up" data-tilt>
+              <div class="skill-card__icon" style="--clr: #00a8e1">
+                <i class="fa-solid fa-gamepad"></i>
+              </div>
+              <h3 class="skill-card__name">Construct 3</h3>
+              <p class="skill-card__desc">Game 2D development</p>
+              <div class="skill-bar">
+                <div class="skill-bar__fill" data-level="70"></div>
+              </div>
+              <span class="skill-card__level">70%</span>
+            </article>
+
+            <article class="skill-card reveal-up" data-tilt>
+              <div class="skill-card__icon" style="--clr: #10b981">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <h3 class="skill-card__name">MySQL</h3>
+              <p class="skill-card__desc">Manajemen basis data</p>
+              <div class="skill-bar">
+                <div class="skill-bar__fill" data-level="75"></div>
+              </div>
+              <span class="skill-card__level">75%</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+         PROJECTS SECTION
+    ============================================ -->
+      <section id="projects" class="projects section">
+        <div class="container">
+          <header class="section__header reveal-up">
+            <span class="section__label">03 — Proyek</span>
+            <h2 class="section__title">
+              Karya yang saya <span class="gradient-text">bangun</span>
+            </h2>
+            <p class="section__subtitle">
+              Beberapa proyek pilihan — dari web, mobile, hingga game.
+            </p>
+          </header>
+
+          <div class="projects__filters reveal-up">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" data-filter="game">Game</button>
+            <button class="filter-btn" data-filter="design">Design</button>
+          </div>
+
+          <div class="projects__grid" id="projectsGrid">
+            <article class="project-card reveal-up" data-category="mobile">
+              <div class="project-card__media">
+                <div
+                  class="project-card__placeholder"
+                  style="--g1: #02569b; --g2: #13b9fd"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="project-card__overlay">
+                  <a
+                    href="https://github.com/Faris-IT/shop_flutter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-card__link"
+                    aria-label="Lihat kode"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a href="#" class="project-card__link" aria-label="Live demo">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__tag">Flutter · Dart</span>
+                <h3 class="project-card__title">Shop Flutter</h3>
+                <p class="project-card__desc">
+                  Aplikasi belanja alat-alat komputer berbasis Flutter dengan
+                  tampilan modern.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal-up" data-category="web">
+              <div class="project-card__media">
+                <div
+                  class="project-card__placeholder"
+                  style="--g1: #8b5cf6; --g2: #06b6d4"
+                >
+                  <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <div class="project-card__overlay">
+                  <a
+                    href="https://github.com/Faris-IT/portofolio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-card__link"
+                    aria-label="Lihat kode"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a
+                    href="https://faris-it.github.io/portofolio/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-card__link"
+                    aria-label="Live demo"
+                  >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__tag">HTML · CSS · JavaScript</span>
+                <h3 class="project-card__title">Web Portofolio Pribadi</h3>
+                <p class="project-card__desc">
+                  Website portofolio pribadi dengan dark mode premium, infinite
+                  scroll, dan animasi interaktif.
+                </p>
+              </div>
+            </article>
+            <article class="project-card reveal-up" data-category="web">
+              <div class="project-card__media">
+                <div
+                  class="project-card__placeholder"
+                  style="--g1: #10b981; --g2: #06b6d4"
+                >
+                  <i class="fa-solid fa-leaf"></i>
+                </div>
+                <div class="project-card__overlay">
+                  <a
+                    href="https://github.com/Faris-IT/eco-venture"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-card__link"
+                    aria-label="Lihat kode"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a href="#" class="project-card__link" aria-label="Live demo">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__tag">Laravel · Blade</span>
+                <h3 class="project-card__title">Eco Venture</h3>
+                <p class="project-card__desc">
+                  Platform web bertema lingkungan dengan arsitektur Laravel
+                  modern.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal-up" data-category="web">
+              <div class="project-card__media">
+                <div
+                  class="project-card__placeholder"
+                  style="--g1: #6366f1; --g2: #8b5cf6"
+                >
+                  <i class="fa-solid fa-users"></i>
+                </div>
+                <div class="project-card__overlay">
+                  <a
+                    href="https://github.com/Faris-IT/tim5Ekskul"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-card__link"
+                    aria-label="Lihat kode"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__tag">PHP</span>
+                <h3 class="project-card__title">Tim 5 Ekskul</h3>
+                <p class="project-card__desc">
+                  Sistem manajemen ekstrakurikuler berbasis PHP untuk kebutuhan
+                  sekolah.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal-up" data-category="design">
+              <div class="project-card__media">
+                <div
+                  class="project-card__placeholder"
+                  style="--g1: #f24e1e; --g2: #ff7262"
+                >
+                  <i class="fa-brands fa-figma"></i>
+                </div>
+                <div class="project-card__overlay">
+                  <a
+                    href="#"
+                    class="project-card__link"
+                    aria-label="Lihat desain"
+                  >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__tag">Figma · UI/UX</span>
+                <h3 class="project-card__title">Konsep Desain UI</h3>
+                <p class="project-card__desc">
+                  Eksplorasi desain antarmuka modern untuk aplikasi web &
+                  mobile.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal-up" data-category="game">
+              <div class="project-card__media">
+                <div
+                  class="project-card__placeholder"
+                  style="--g1: #00a8e1; --g2: #7c3aed"
+                >
+                  <i class="fa-solid fa-gamepad"></i>
+                </div>
+                <div class="project-card__overlay">
+                  <a href="#" class="project-card__link" aria-label="Mainkan">
+                    <i class="fa-solid fa-play"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__tag">Construct 3</span>
+                <h3 class="project-card__title">Game 2D Project</h3>
+                <p class="project-card__desc">
+                  Prototipe game 2D interaktif yang dibangun menggunakan
+                  Construct 3.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+         CONTACT SECTION
+    ============================================ -->
+      <section id="contact" class="contact section">
+        <div class="container">
+          <header class="section__header reveal-up">
+            <span class="section__label">04 — Kontak</span>
+            <h2 class="section__title">
+              Mari <span class="gradient-text">berkolaborasi</span>
+            </h2>
+            <p class="section__subtitle">
+              Punya ide proyek atau ingin sekadar menyapa? Kirim pesan!
+            </p>
+          </header>
+
+          <div class="contact__grid">
+            <div class="contact__info reveal-left">
+              <a href="mailto:pelajar.m.f@gmail.com" class="contact-card">
+                <div class="contact-card__icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <span>Email</span>
+                  <strong>pelajar.m.f@gmail.com</strong>
+                </div>
+              </a>
+
+              <a
+                href="https://wa.me/62895333658151"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card"
+              >
+                <div class="contact-card__icon">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div>
+                  <span>WhatsApp</span>
+                  <strong>0895-3336-58151</strong>
+                </div>
+              </a>
+
+              <a
+                href="https://github.com/Faris-IT"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card"
+              >
+                <div class="contact-card__icon">
+                  <i class="fa-brands fa-github"></i>
+                </div>
+                <div>
+                  <span>GitHub</span>
+                  <strong>@Faris-IT</strong>
+                </div>
+              </a>
+
+              <div class="contact-card contact-card--static">
+                <div class="contact-card__icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <span>Lokasi</span>
+                  <strong>Bogor, Indonesia</strong>
+                </div>
+              </div>
+            </div>
+
+            <form
+              class="contact__form reveal-right"
+              id="contactForm"
+              novalidate
+            >
+              <div class="form-group">
+                <label for="name">Nama</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Nama Anda"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="email@contoh.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Pesan</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Tulis pesan Anda di sini..."
+                  required
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn--primary btn--block magnetic"
+              >
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Kirim Pesan</span>
+              </button>
+
+              <p class="form-note" id="formNote"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================
+       LOOP CONTAINER — Tempat clone konten ditambahkan
+  ============================================ -->
+    <div id="loopContainer" aria-hidden="true"></div>
+
+    <!-- ============================================
+       BACK TO TOP
+  ============================================ -->
+    <button id="backToTop" class="back-to-top" aria-label="Kembali ke atas">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================
+       SCRIPTS
+  ============================================ -->
+    <script src="script.js" defer></script>
+  </body>
+</html>
