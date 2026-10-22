@@ -523,218 +523,272 @@
       </section>
 
       <!-- ============================================
-         PROJECTS SECTION
-    ============================================ -->
-      <section id="projects" class="projects section">
-        <div class="container">
-          <header class="section__header reveal-up">
-            <span class="section__label">03 — Proyek</span>
-            <h2 class="section__title">
-              Karya yang saya <span class="gradient-text">bangun</span>
-            </h2>
-            <p class="section__subtitle">
-              Beberapa proyek pilihan — dari web, mobile, hingga game.
-            </p>
-          </header>
+     PROJECTS SECTION
+============================================ -->
+<section id="projects" class="projects section">
+  <div class="container">
+    <header class="section__header reveal-up">
+      <span class="section__label">03 — Proyek</span>
+      <h2 class="section__title">
+        Karya yang saya <span class="gradient-text">bangun</span>
+      </h2>
+      <p class="section__subtitle">
+        Kumpulan proyek dari GitHub saya — game, web, mobile, dan desain.
+      </p>
+    </header>
 
-          <div class="projects__filters reveal-up">
-            <button class="filter-btn active" data-filter="all">Semua</button>
-            <button class="filter-btn" data-filter="web">Web</button>
-            <button class="filter-btn" data-filter="mobile">Mobile</button>
-            <button class="filter-btn" data-filter="game">Game</button>
-            <button class="filter-btn" data-filter="design">Design</button>
+    <div class="projects__filters reveal-up">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="game">Game</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="mobile">Mobile</button>
+      <button class="filter-btn" data-filter="design">Design</button>
+    </div>
+
+    <div class="projects__grid" id="projectsGrid">
+
+      <!-- ============ SNAKE GAME ============ -->
+      <article class="project-card reveal-up" data-category="game">
+        <div class="project-card__media">
+          <img
+            src="https://opengraph.githubassets.com/1/Faris-IT/snake-game"
+            alt="Preview Snake Game"
+            class="project-card__img"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+          />
+          <div class="project-card__placeholder" style="--g1: #10b981; --g2: #06b6d4; display: none;">
+            <i class="fa-solid fa-gamepad"></i>
           </div>
-
-          <div class="projects__grid" id="projectsGrid">
-            <article class="project-card reveal-up" data-category="mobile">
-              <div class="project-card__media">
-                <div
-                  class="project-card__placeholder"
-                  style="--g1: #02569b; --g2: #13b9fd"
-                >
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </div>
-                <div class="project-card__overlay">
-                  <a
-                    href="https://github.com/Faris-IT/shop_flutter"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-card__link"
-                    aria-label="Lihat kode"
-                  >
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                  <a href="#" class="project-card__link" aria-label="Live demo">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-card__body">
-                <span class="project-card__tag">Flutter · Dart</span>
-                <h3 class="project-card__title">Shop Flutter</h3>
-                <p class="project-card__desc">
-                  Aplikasi belanja alat-alat komputer berbasis Flutter dengan
-                  tampilan modern.
-                </p>
-              </div>
-            </article>
-
-            <article class="project-card reveal-up" data-category="web">
-              <div class="project-card__media">
-                <div
-                  class="project-card__placeholder"
-                  style="--g1: #8b5cf6; --g2: #06b6d4"
-                >
-                  <i class="fa-solid fa-user-tie"></i>
-                </div>
-                <div class="project-card__overlay">
-                  <a
-                    href="https://github.com/Faris-IT/portofolio"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-card__link"
-                    aria-label="Lihat kode"
-                  >
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                  <a
-                    href="https://faris-it.github.io/portofolio/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-card__link"
-                    aria-label="Live demo"
-                  >
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-card__body">
-                <span class="project-card__tag">HTML · CSS · JavaScript</span>
-                <h3 class="project-card__title">Web Portofolio Pribadi</h3>
-                <p class="project-card__desc">
-                  Website portofolio pribadi dengan dark mode premium, infinite
-                  scroll, dan animasi interaktif.
-                </p>
-              </div>
-            </article>
-            <article class="project-card reveal-up" data-category="web">
-              <div class="project-card__media">
-                <div
-                  class="project-card__placeholder"
-                  style="--g1: #10b981; --g2: #06b6d4"
-                >
-                  <i class="fa-solid fa-leaf"></i>
-                </div>
-                <div class="project-card__overlay">
-                  <a
-                    href="https://github.com/Faris-IT/eco-venture"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-card__link"
-                    aria-label="Lihat kode"
-                  >
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                  <a href="#" class="project-card__link" aria-label="Live demo">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-card__body">
-                <span class="project-card__tag">Laravel · Blade</span>
-                <h3 class="project-card__title">Eco Venture</h3>
-                <p class="project-card__desc">
-                  Platform web bertema lingkungan dengan arsitektur Laravel
-                  modern.
-                </p>
-              </div>
-            </article>
-
-            <article class="project-card reveal-up" data-category="web">
-              <div class="project-card__media">
-                <div
-                  class="project-card__placeholder"
-                  style="--g1: #6366f1; --g2: #8b5cf6"
-                >
-                  <i class="fa-solid fa-users"></i>
-                </div>
-                <div class="project-card__overlay">
-                  <a
-                    href="https://github.com/Faris-IT/tim5Ekskul"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-card__link"
-                    aria-label="Lihat kode"
-                  >
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-card__body">
-                <span class="project-card__tag">PHP</span>
-                <h3 class="project-card__title">Tim 5 Ekskul</h3>
-                <p class="project-card__desc">
-                  Sistem manajemen ekstrakurikuler berbasis PHP untuk kebutuhan
-                  sekolah.
-                </p>
-              </div>
-            </article>
-
-            <article class="project-card reveal-up" data-category="design">
-              <div class="project-card__media">
-                <div
-                  class="project-card__placeholder"
-                  style="--g1: #f24e1e; --g2: #ff7262"
-                >
-                  <i class="fa-brands fa-figma"></i>
-                </div>
-                <div class="project-card__overlay">
-                  <a
-                    href="#"
-                    class="project-card__link"
-                    aria-label="Lihat desain"
-                  >
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-card__body">
-                <span class="project-card__tag">Figma · UI/UX</span>
-                <h3 class="project-card__title">Konsep Desain UI</h3>
-                <p class="project-card__desc">
-                  Eksplorasi desain antarmuka modern untuk aplikasi web &
-                  mobile.
-                </p>
-              </div>
-            </article>
-
-            <article class="project-card reveal-up" data-category="game">
-              <div class="project-card__media">
-                <div
-                  class="project-card__placeholder"
-                  style="--g1: #00a8e1; --g2: #7c3aed"
-                >
-                  <i class="fa-solid fa-gamepad"></i>
-                </div>
-                <div class="project-card__overlay">
-                  <a href="#" class="project-card__link" aria-label="Mainkan">
-                    <i class="fa-solid fa-play"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-card__body">
-                <span class="project-card__tag">Construct 3</span>
-                <h3 class="project-card__title">Game 2D Project</h3>
-                <p class="project-card__desc">
-                  Prototipe game 2D interaktif yang dibangun menggunakan
-                  Construct 3.
-                </p>
-              </div>
-            </article>
+          <div class="project-card__overlay">
+            <a href="https://github.com/Faris-IT/snake-game" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="Lihat kode">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://faris-it.github.io/snake-game/" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="Mainkan">
+              <i class="fa-solid fa-play"></i>
+            </a>
           </div>
         </div>
-      </section>
+        <div class="project-card__body">
+          <span class="project-card__tag">JavaScript · HTML · CSS</span>
+          <h3 class="project-card__title">Snake Game</h3>
+          <p class="project-card__desc">
+            Game arcade ular klasik dengan 12 mode berbeda, dibangun murni menggunakan HTML, CSS, dan JavaScript.
+          </p>
+        </div>
+      </article>
 
+      <!-- ============ COLONY GAME ============ -->
+      <article class="project-card reveal-up" data-category="game">
+        <div class="project-card__media">
+          <img
+            src="https://opengraph.githubassets.com/1/Faris-IT/colony-game"
+            alt="Preview Colony Game"
+            class="project-card__img"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+          />
+          <div class="project-card__placeholder" style="--g1: #f59e0b; --g2: #ef4444; display: none;">
+            <i class="fa-solid fa-gamepad"></i>
+          </div>
+          <div class="project-card__overlay">
+            <a href="https://github.com/Faris-IT/colony-game" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="Lihat kode">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://faris-it.github.io/colony-game/" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="Mainkan">
+              <i class="fa-solid fa-play"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__tag">JavaScript</span>
+          <h3 class="project-card__title">Colony Game</h3>
+          <p class="project-card__desc">
+            Game simulasi koloni interaktif yang dibangun dengan JavaScript murni.
+          </p>
+        </div>
+      </article>
+
+      <!-- ============ CIRCUIT GAME ============ -->
+      <article class="project-card reveal-up" data-category="game">
+        <div class="project-card__media">
+          <img
+            src="https://opengraph.githubassets.com/1/Faris-IT/circuit-game"
+            alt="Preview Circuit Game"
+            class="project-card__img"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+          />
+          <div class="project-card__placeholder" style="--g1: #8b5cf6; --g2: #ec4899; display: none;">
+            <i class="fa-solid fa-gamepad"></i>
+          </div>
+          <div class="project-card__overlay">
+            <a href="https://github.com/Faris-IT/circuit-game" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="Lihat kode">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://faris-it.github.io/circuit-game/" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="Mainkan">
+              <i class="fa-solid fa-play"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__tag">JavaScript</span>
+          <h3 class="project-card__title">Circuit Game</h3>
+          <p class="project-card__desc">
+            Game puzzle sirkuit interaktif dengan mekanik yang menantang.
+          </p>
+        </div>
+      </article>
+
+      <!-- ============ MUFA GAMES ============ -->
+      <article class="project-card reveal-up" data-category="game">
+        <div class="project-card__media">
+          <img
+            src="https://opengraph.githubassets.com/1/Faris-IT/mufa-games"
+            alt="Preview Mufa Games"
+            class="project-card__img"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+          />
+          <div class="project-card__placeholder" style="--g1: #00a8e1; --g2: #7c3aed; display: none;">
+            <i class="fa-solid fa-dice"></i>
+          </div>
+          <div class="project-card__overlay">
+            <a href="https://github.com/Faris-IT/mufa-games" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="Lihat kode">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://faris-it.github.io/mufa-games/" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="Mainkan">
+              <i class="fa-solid fa-play"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__tag">JavaScript</span>
+          <h3 class="project-card__title">Mufa Games</h3>
+          <p class="project-card__desc">
+            Kumpulan game mini interaktif yang dibangun dengan JavaScript.
+          </p>
+        </div>
+      </article>
+
+      <!-- ============ SHOP FLUTTER ============ -->
+      <article class="project-card reveal-up" data-category="mobile">
+        <div class="project-card__media">
+          <img
+            src="https://opengraph.githubassets.com/1/Faris-IT/shop_flutter"
+            alt="Preview Shop Flutter"
+            class="project-card__img"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+          />
+          <div class="project-card__placeholder" style="--g1: #02569b; --g2: #13b9fd; display: none;">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="project-card__overlay">
+            <a href="https://github.com/Faris-IT/shop_flutter" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="Lihat kode">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__tag">Flutter · Dart</span>
+          <h3 class="project-card__title">Shop Flutter</h3>
+          <p class="project-card__desc">
+            Aplikasi belanja alat-alat komputer berbasis Flutter dengan tampilan modern.
+          </p>
+        </div>
+      </article>
+
+      <!-- ============ PORTOFOLIO ============ -->
+      <article class="project-card reveal-up" data-category="web">
+        <div class="project-card__media">
+          <img
+            src="https://opengraph.githubassets.com/1/Faris-IT/portofolio"
+            alt="Preview Portofolio"
+            class="project-card__img"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+          />
+          <div class="project-card__placeholder" style="--g1: #8b5cf6; --g2: #06b6d4; display: none;">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+          <div class="project-card__overlay">
+            <a href="https://github.com/Faris-IT/portofolio" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="Lihat kode">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://faris-it.github.io/portofolio/" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="Live demo">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__tag">HTML · CSS · JavaScript</span>
+          <h3 class="project-card__title">Web Portofolio Pribadi</h3>
+          <p class="project-card__desc">
+            Website portofolio pribadi dengan dark mode premium dan animasi interaktif.
+          </p>
+        </div>
+      </article>
+
+      <!-- ============ ECO VENTURE ============ -->
+      <article class="project-card reveal-up" data-category="web">
+        <div class="project-card__media">
+          <img
+            src="https://opengraph.githubassets.com/1/Faris-IT/eco-venture"
+            alt="Preview Eco Venture"
+            class="project-card__img"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+          />
+          <div class="project-card__placeholder" style="--g1: #10b981; --g2: #06b6d4; display: none;">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <div class="project-card__overlay">
+            <a href="https://github.com/Faris-IT/eco-venture" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="Lihat kode">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__tag">Laravel · Blade</span>
+          <h3 class="project-card__title">Eco Venture</h3>
+          <p class="project-card__desc">
+            Platform web bertema lingkungan dengan arsitektur Laravel modern.
+          </p>
+        </div>
+      </article>
+
+      <!-- ============ TIM 5 EKSKUL ============ -->
+      <article class="project-card reveal-up" data-category="web">
+        <div class="project-card__media">
+          <img
+            src="https://opengraph.githubassets.com/1/Faris-IT/tim5Ekskul"
+            alt="Preview Tim 5 Ekskul"
+            class="project-card__img"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+          />
+          <div class="project-card__placeholder" style="--g1: #6366f1; --g2: #8b5cf6; display: none;">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <div class="project-card__overlay">
+            <a href="https://github.com/Faris-IT/tim5Ekskul" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="Lihat kode">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__tag">PHP</span>
+          <h3 class="project-card__title">Tim 5 Ekskul</h3>
+          <p class="project-card__desc">
+            Sistem manajemen ekstrakurikuler berbasis PHP untuk kebutuhan sekolah.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
       <!-- ============================================
          CONTACT SECTION
     ============================================ -->
