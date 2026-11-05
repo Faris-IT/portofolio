@@ -90,14 +90,13 @@
 
         <nav class="nav__menu" id="navMenu" aria-label="Navigasi utama">
           <ul class="nav__list">
-            <li>
-              <a href="#home" class="nav__link active" data-nav>Beranda</a>
-            </li>
-            <li><a href="#about" class="nav__link" data-nav>Tentang</a></li>
-            <li><a href="#skills" class="nav__link" data-nav>Keahlian</a></li>
-            <li><a href="#projects" class="nav__link" data-nav>Proyek</a></li>
-            <li><a href="#contact" class="nav__link" data-nav>Kontak</a></li>
-          </ul>
+  <li><a href="#home" class="nav__link active" data-nav>Beranda</a></li>
+  <li><a href="#about" class="nav__link" data-nav>Tentang</a></li>
+  <li><a href="#skills" class="nav__link" data-nav>Keahlian</a></li>
+  <li><a href="#achievements" class="nav__link" data-nav>Prestasi</a></li>
+  <li><a href="#projects" class="nav__link" data-nav>Proyek</a></li>
+  <li><a href="#contact" class="nav__link" data-nav>Kontak</a></li>
+</ul>
         </nav>
 
         <div class="nav__actions">
@@ -523,12 +522,128 @@
       </section>
 
       <!-- ============================================
+     ACHIEVEMENTS SECTION
+============================================ -->
+<section id="achievements" class="achievements section">
+  <div class="container">
+    <header class="section__header reveal-up">
+      <span class="section__label">03 — Prestasi</span>
+      <h2 class="section__title">
+        Jejak <span class="gradient-text">perjuangan</span>
+      </h2>
+      <p class="section__subtitle">
+        Pencapaian dan pengalaman kompetisi yang membentuk perjalanan saya.
+      </p>
+    </header>
+
+    <!-- ===== HIGHLIGHT: JUARA ===== -->
+    <div class="achievement-highlight reveal-up">
+      <div class="achievement-highlight__glow" aria-hidden="true"></div>
+
+      <div class="achievement-highlight__badge">
+        <i class="fa-solid fa-trophy"></i>
+      </div>
+
+      <div class="achievement-highlight__content">
+        <span class="achievement-highlight__rank">
+          <i class="fa-solid fa-medal"></i> Juara 3
+        </span>
+        <h3 class="achievement-highlight__title">
+          Lomba Kompetensi Siswa (LKS) Kota Bogor 2026
+        </h3>
+        <p class="achievement-highlight__field">
+          <i class="fa-solid fa-code"></i> Bidang: IT Solutions for Business
+        </p>
+        <p class="achievement-highlight__desc">
+          Meraih posisi juara 3 dalam kompetisi bergengsi tingkat kota yang menguji
+          kemampuan dalam merancang solusi teknologi untuk kebutuhan bisnis.
+        </p>
+      </div>
+
+      <div class="achievement-highlight__confetti" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- ===== PARTISIPASI ===== -->
+    <div class="achievement-participation">
+      <h3 class="achievement-participation__title reveal-up">
+        <i class="fa-solid fa-flag-checkered"></i>
+        Kompetisi yang Pernah Diikuti
+      </h3>
+
+      <div class="achievement-timeline">
+
+        <div class="timeline-item reveal-left">
+          <div class="timeline-item__marker">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <div class="timeline-item__card">
+            <div class="timeline-item__header">
+              <h4>Kompetisi Inovasi Jawa Barat (KIJB)</h4>
+              <span class="timeline-item__badge">Partisipan</span>
+            </div>
+            <p class="timeline-item__desc">
+              Berpartisipasi dalam ajang inovasi tingkat provinsi Jawa Barat dengan
+              membawa ide kreatif di bidang teknologi.
+            </p>
+            <span class="timeline-item__meta">
+              <i class="fa-solid fa-location-dot"></i> Jawa Barat
+            </span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-right">
+          <div class="timeline-item__marker">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div class="timeline-item__card">
+            <div class="timeline-item__header">
+              <h4>Bogor Innovation Award (BIA)</h4>
+              <span class="timeline-item__badge">Partisipan</span>
+            </div>
+            <p class="timeline-item__desc">
+              Mengikuti kompetisi inovasi bergengsi tingkat Kota Bogor dengan
+              mempersembahkan karya terbaik.
+            </p>
+            <span class="timeline-item__meta">
+              <i class="fa-solid fa-location-dot"></i> Kota Bogor
+            </span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-left">
+          <div class="timeline-item__marker">
+            <i class="fa-solid fa-gamepad"></i>
+          </div>
+          <div class="timeline-item__card">
+            <div class="timeline-item__header">
+              <h4>Lomba Cipta Game Nasional (LCGN) Clevio</h4>
+              <span class="timeline-item__badge">Partisipan</span>
+            </div>
+            <p class="timeline-item__desc">
+              Ikut serta dalam lomba cipta game tingkat nasional yang diselenggarakan
+              oleh Clevio, menguji kreativitas dan kemampuan game development.
+            </p>
+            <span class="timeline-item__meta">
+              <i class="fa-solid fa-globe"></i> Nasional
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- ============================================
      PROJECTS SECTION
 ============================================ -->
 <section id="projects" class="projects section">
   <div class="container">
     <header class="section__header reveal-up">
-      <span class="section__label">03 — Proyek</span>
+      <span class="section__label">04 — Proyek</span>
       <h2 class="section__title">
         Karya yang saya <span class="gradient-text">bangun</span>
       </h2>
@@ -795,7 +910,7 @@
       <section id="contact" class="contact section">
         <div class="container">
           <header class="section__header reveal-up">
-            <span class="section__label">04 — Kontak</span>
+            <span class="section__label">05 — Kontak</span>
             <h2 class="section__title">
               Mari <span class="gradient-text">berkolaborasi</span>
             </h2>
